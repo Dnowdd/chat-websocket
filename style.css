@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --border-message: 10px;
+    --color-text: #EEEEEE;
+    --color-placeholder: rgb(88, 88, 88);
+
+    --color-background-main: #31363F;
+    --color-background-footer: #222831;
+    --color-background-header: #222831;
+
+    --color-background-message: #222831;
+    --color-background-message-hover: #2228316e;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background-main);
+}
+
+.container{
+    margin: 0 auto;
+    background-color: var(--color-background-main);
+    width: 50%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.container > header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-background-header);
+    padding: 10px 25px;
+}
+.container > header > .profile-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    background-color: var(--color-placeholder);
+}
+.container > header > .profile-name{
+    font-size: 16px;
+}
+.container > header > .buttons{
+    display: flex;
+}
+.container > header > .buttons > div{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-placeholder);
+}
+
+
+.container > footer{
+    background-color: var(--color-background-footer);
+    padding: 10px 25px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 35px;
+    align-items: center;
+}
+.container > footer > .emojis{
+    width: 35px;
+    height: 35px;
+    border-radius: 999px;
+    background-color: var(--color-placeholder);
+}
+.container > footer > .send{
+    width: 45px;
+    height: 45px;
+    border-radius: 999px;
+    background-color: var(--color-placeholder);
+}
+.container > footer > input{
+    outline: none;
+    border: none;
+    border-radius: 999px;
+    height: 100%;
+
+    font-size: 16px;
+    padding: 0 25px;
+
+    background-color: transparent;
+    color: var(--color-text);
+
+    transition: .3s;
+}
+.container > footer > input:focus{
+    box-shadow: rgba(183, 209, 238, 0.3) 0px 0px 0px 3px;
+}
+
+.container > main{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: auto;
+
+    position: relative;
+}
+
+.container > main > .message{
+    padding: 15px 85px;
+    display: grid;
+    transition: .3s;
+}
+.container > main > .message:hover{
+    background-color: var(--color-background-message-hover);
+}
+.container > main > .other{
+    justify-content: left;
+}
+.container > main > .me{
+    justify-content: right;
+}
+.container > main > .other > div{
+    border-radius: 0 var(--border-message) var(--border-message) var(--border-message);
+}
+.container > main > .me > div{
+    border-radius: var(--border-message) 0 var(--border-message) var(--border-message);
+}
+.container > main > .message > div{
+    background-color: var(--color-background-message);
+    padding: 12px 40px;
+}
+.container > main > .message > div > .name{
+    font-weight: 700;
+    font-size: 12px;
+    user-select: none;
+}
+.container > main > .message > div > .text{
+    font-size: 16px;
+}
+.container > main > .other + .other .name{
+    display: none;
+}
